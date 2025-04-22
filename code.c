@@ -164,11 +164,18 @@ void addnode(int value) {
 }
 
 // Function to remove a drone from the emergency rerouting list
-void deletenode(int value) {
+void deletenode()
+{
     if (chead == NULL) {
-        printf("List is empty\n");
+        printf("No emergency drones to release.\n");
         return;
     }
+    printf("the emergency drone that is rerouted is : %s\n", chead->data);
+    struct cnode *temp_c = chead;
+    chead = chead->next;
+    ctemp->next = chead;
+    free(temp_c);
+
     struct cnode *temp = chead, *prev = NULL;
     if (temp->data == value && temp->next == chead) {
         free(temp);
