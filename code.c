@@ -260,6 +260,7 @@ int main()
         {
         case 1: // case for delivery request
             printf("enter the delivery request required (1-6): ");
+            printf("1. food\n2.medicine\n3.tools\n4.water\n5.parts\n6.fuel\n"); 
             enqueue(); // function call to input values
             break;
 
